@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PDOPoc.Model.ReceiptItemEntity>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Merchant
+            </th>
+            <th>
+                Invoice ID
+            </th>
+            <th>
+                Merchant Address
+            </th>
+            <th>
+                Merchant Phone
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var receiptItem in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => receiptItem.PartitionKey)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => receiptItem.RowKey)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => receiptItem.MerchantAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => receiptItem.MerchantPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => receiptItem.Total)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
